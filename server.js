@@ -6,13 +6,6 @@ const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
-const index = require('./server/router/index') // localhost:3000/
-// session机制的user
-const user = require('./server/router/user')
-
-// token机制的user
-const usertoken = require('./server-token/router/usertoken')
-
 const db = mongoose.connect(config.mongodb);
 // 数据库连接
 db.connection.on("error", function(error) {
@@ -47,13 +40,15 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 10000 // 设置返回的cookie时效为30秒，测试用
+    maxAge: 10000 // 设置返回的cookie时效为10秒，测试用
   }
-  // store: new MongoStore({
-  //   url: "mongodb://localhost:27017/usersession"
-  // })
 }))
-
+// 引入路由
+const index = require('./server/router/index')
+// session机制的user
+const user = require('./server/router/user')
+// token机制的user
+const usertoken = require('./server-token/router/usertoken')
 // 设定路由
 app.use('/', index)
 app.use('/api', user)

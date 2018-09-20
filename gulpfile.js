@@ -11,7 +11,7 @@ var server = path.resolve(ROOT, 'server');
 // browser-sync配置，配置里启动nodemon任务
 gulp.task('browser-sync', ['nodemon'], function() {
     bs.init(null, {
-        // 默认起的是3000端口
+        // 默认起的服务端是3000端口
         proxy: "http://localhost:8080/index.html",
         port: 4000
     });
