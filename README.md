@@ -1,4 +1,3 @@
-@[TOC](注册登录的完整实例（使用vue）)
 # 项目实例介绍
 本项目实例主要采用两种方式实现登录、注册、注销的功能，涉及前端的cookies、session和token三个内容。前端使用vue和vue-router，后台服务采用node.js和express结合express-session
 

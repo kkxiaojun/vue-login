@@ -35,12 +35,12 @@ app.use(express.static('dist'))
 
 // session
 app.use(session({
-  secret: 'usersession',
+  secret: 'usersession', // 对session id 相关的cookie 进行签名
   key: 'usersession',
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 10000 // 设置返回的cookie时效为10秒，测试用
+    maxAge: 10000 // 设置 session 的有效时间，单位毫秒
   }
 }))
 // 引入路由

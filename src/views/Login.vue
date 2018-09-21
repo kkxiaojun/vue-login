@@ -1,7 +1,7 @@
 <template>
   <el-card class="box-card">
     <el-row type="flex" justify="center">
-      <el-col :span="12">
+      <el-col :span="8" class="el-col-s">
         <el-form 
           label-position="left" 
           label-width="80px" 
@@ -127,3 +127,10 @@
     }
   }
 </script>
+<style scoped>
+.el-col-s{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+</style>
